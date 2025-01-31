@@ -6,6 +6,7 @@
 struct Handshake {
   uint8_t id;         // unique module ID
   String type;        // name of modul type
+  uint8_t devices;    // number of subdevices
   uint8_t consuming;  // how much energy can be drawn by this module
   bool closed;        // is the modules connection closed
 };
@@ -21,11 +22,13 @@ public:
   uint8_t address;  // I2C address
   uint8_t id;       // unique module ID
   String type;      // name of module type
+  uint8_t devices;  // number of subdevices
 
   Module(const uint8_t addr, const Handshake& handshake) {
     address = addr;
     id = handshake.id;
     type = handshake.type;
+    devices = handshake.devices;
   }
 };
 
@@ -94,6 +97,7 @@ void scanForModules() {
         consumptionSum += handshakeI.consuming;
         modulesClosed &= handshakeI.closed;
       }
+      encodeHandshake(handshakeI.type, handshakeI.devices, handshakeI.consuming);
     }
   }
 

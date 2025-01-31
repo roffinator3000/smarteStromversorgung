@@ -1,13 +1,48 @@
 
 #include <ArduinoJson.h>
 
+
+String encode() {
+  String message = "";
+  JsonDocument doc;
+  int count = 0;
+
+  float temp = random(1500, 3300) / 100.0f;
+  float hum = random(7500, 9000) / 100.0f;
+
+  /// Example of creating a JSON document
+  doc["temp"] = temp;
+  doc["hum"] = hum;
+  doc["bool"] = true;
+  doc["count"] = ++count;
+  doc["sumth"] = "sumth";
+  doc["json"] = "{\"key\":\"value\"}";
+
+  /// Serialize the doc object into JSON format into the message variable
+  /// Example Output message => { "temperature": 25,"humidity":75 }
+  serializeJson(doc, message);
+
+  Serial.print("sending: ");
+  Serial.println(message);
+
+  return message;
+}
+
+
+
 void decode(const String message) {
 
   JsonDocument doc;
   deserializeJson(doc, message);
   if (doc.is<JsonObject>()) {
-    for (JsonPair keyValue : doc.as<JsonObject>()) {
+    // JsonObject obj = doc.as<JsonObject>();  // Get JsonObject from the document
 
+    // Iterate through each key-value pair in the JsonObject
+    // for (JsonPair keyValue : obj) {
+    for (JsonPair keyValue : doc.as<JsonObject>()) {
+      // const char* keyName = keyValue.key().c_str();  // Get the key name as a C-string
+
+      // Serial.print("Value of ");
       Serial.print(keyValue.key().c_str());
       Serial.print(": ");
 
