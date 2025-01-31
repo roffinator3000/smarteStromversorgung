@@ -12,12 +12,12 @@ Das Ziel ist es, ein modulares System zu erstellen, mit dem unterschiedliche Art
 
 <details>
 <summary>Aufbau Hardware</summary>
-<br><br>
+<br>
 Zwei beispielhafte Systeme sind diese:
 
 1. Zum Einsatz z.B. auf dem Schreibtisch im Arbeitszimmer.<br>
 	![beispielhaftes System für den Schreibtisch](/renderings/composite1-desk.png?raw=true)
-	<br>
+	<br><br>
 	Es besteht (v.l.n.r.) aus 
 	* einem Kopf
 	* einem Modul mit zwei Steckdosen des Typs F, mit jeweils
@@ -31,12 +31,13 @@ Zwei beispielhafte Systeme sind diese:
 	* einem Endmodul mit Temperatursensor
 
 2. Kann z.B. auf der anderen Seite des Arbeitszimmers positioniert werden.<br>
-![beispielhaftes System für den Boden](/renderings/composite2-floor.png?raw=true)<br>
+![beispielhaftes System für den Boden](/renderings/composite2-floor.png?raw=true)
+	<br><br>
 	Es besteht (v.l.n.r.) aus 
 	* einem Kopf
 	* einem Modul mit zwei Steckdosen des Typs F, mit jeweils
 		* einer LED als Zustandsanzeige
-		* einem Taster zum direkten schalten
+		* einem Taster zum direkten Schalten
 		* optional auch Ammetern zur Überwachung des Energieverbrauchs
 	* einem Modul mit zwei nur extern steuerbaren Steckdosen des Typs F (wieder optional mit Ammeter)
 	* einem passiven Endmodul
@@ -45,14 +46,7 @@ Zwei beispielhafte Systeme sind diese:
 In dieser Kombination kann am Schreibtisch ein PC mit Monitor angeschlossen und deren Stromversorgung direkt gesteuert werden. Eine Tischlampe mit passendem Leuchmittel kann angeschlossen und direkt über das Modul gedimmt werden.<br>
 Am zweiten System kann z.B. ein Deckenfluter und ein Fernseher am ersten Modul angeschlossen werden, so dass diese direkt dort geschaltet werden können. Am zweiten Modul können Drucker und NAS angeschlossen werden, die nur selten geschaltet werden. Durch das entsprechende Modul im System am Schreibtisch können alle hier angesteckten Geräte auch bequem von dort aus geschaltet werden.<br>
 Da all dies in einem smart-home-System eingebunden ist, lassen sich alle Geräte auch extern steuern und die Temberatur (letztes Modul am Schreibtisch) kann eingelesen und anderweitig verwendet werden.
-
-</details>
-
-
-<details>
-<summary>Aufbau Software</summary>
 <br><br>
-graph
+Um die Kompexität zu senken kann ein System auch als ein einzelnes Gerät aufgebaut werden, dieses wird als stand-alone System bezeichnet. Ein stand-alone System kann Funktionen beliebiger Module und eines Kopfes beinhalten.
 
 </details>
-
